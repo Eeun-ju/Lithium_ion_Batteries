@@ -5,6 +5,7 @@
 <br>
 사용 데이터 : https://ti.arc.nasa.gov/tech/dash/groups/pcoe/prognostic-data-repository/ 5.Battery Data Set<br>
 논문 관련 링크 : https://www.sciencedirect.com/science/article/abs/pii/S0026271416303018
+참고 자료 : https://neosla.tistory.com/34
 
 ----------------------------------------------------------------------------
 EMD? (Empirical Mode Decomposition)<br>
