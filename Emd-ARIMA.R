@@ -18,3 +18,18 @@ plot(x,y = soh_list,
      xlab = "Cycles", ylab = "SOH",
      main = "Battery5 SOH")
 abline(h=0.7,lwd=2,col="red") #Threshold - 0.7~0.8
+
+cycles =x
+starting_point = 100 #³í¹® ¼Ó starting point
+soh_list
+#install.packages('EMD')
+library('EMD')
+train = soh_list[1:starting_point]
+test = soh_list[starting_point:168]
+test
+try = emd(train,max.imf = 4,plot.imf = F)
+par(mfrow=c(3,1),mar=c(3,2,2,1))
+plot(train,main = "signal",type = "1")
+rangeimf = range(try$imf)
+rangeimf
+
