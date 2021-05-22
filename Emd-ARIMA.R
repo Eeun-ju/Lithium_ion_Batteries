@@ -29,7 +29,18 @@ test = soh_list[starting_point:168]
 test
 try = emd(train,max.imf = 4,plot.imf = F)
 par(mfrow=c(3,1),mar=c(3,2,2,1))
-plot(train,main = "signal",type = "1")
+plot(train,main = "signal")
 rangeimf = range(try$imf)
-rangeimf
+for(i in 1:try$nimf){
+  plot(c(1:100),try$imf[,i],type = 'l',xlab="",ylab = "",ylim=rangeimf,main = paste(i,"-th IMF",sep=""));abline(h=0)
+}
+plot(c(1:100),try$residue,xlab="",ylab="",main="Residue",type="l",axes=FALSE);box()
 
+
+#level-IMF ARIMA model prediction
+#c1
+#install.packages('forecast')
+library('forecast')
+train_Set = try$imf[,1]
+mod = arima(train_Set,order = c(2,0,0))
+forecast(mod,h=30)
